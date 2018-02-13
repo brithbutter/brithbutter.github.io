@@ -3,15 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>My Now Post | Brithbutter&#39;s Blog</title>
+  <title>Start with Spring | Brithbutter&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="My Now Post">
-<meta property="og:url" content="http://yoursite.com/2017/05/23/My-Now-Post/index.html">
+  <meta name="description" content="Start with Spring spring is an awesome Java framework which  can help Java programmer to save the size of code. Moreover, Spring also patched plenty of components like rabbitmq, hbase, etc. to improve">
+<meta name="keywords" content="java spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Start with Spring">
+<meta property="og:url" content="http://yoursite.com/2017/05/26/my-first-blog/index.html">
 <meta property="og:site_name" content="Brithbutter&#39;s Blog">
-<meta property="og:updated_time" content="2017-05-23T02:29:13.381Z">
+<meta property="og:description" content="Start with Spring spring is an awesome Java framework which  can help Java programmer to save the size of code. Moreover, Spring also patched plenty of components like rabbitmq, hbase, etc. to improve">
+<meta property="og:updated_time" content="2018-02-13T03:16:32.290Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My Now Post">
+<meta name="twitter:title" content="Start with Spring">
+<meta name="twitter:description" content="Start with Spring spring is an awesome Java framework which  can help Java programmer to save the size of code. Moreover, Spring also patched plenty of components like rabbitmq, hbase, etc. to improve">
   
     <link rel="alternative" href="/atom.xml" title="Brithbutter&#39;s Blog" type="application/atom+xml">
   
@@ -225,11 +229,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-My-Now-Post" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-my-first-blog" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/05/23/My-Now-Post/" class="article-date">
-      <time datetime="2017-05-23T02:29:13.000Z" itemprop="datePublished">2017-05-23</time>
+      <a href="/2017/05/26/my-first-blog/" class="article-date">
+      <time datetime="2017-05-26T08:53:58.000Z" itemprop="datePublished">2017-05-26</time>
 </a>
     </div>
   
@@ -242,7 +246,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      My Now Post
+      Start with Spring
     </h1>
   
 
@@ -252,6 +256,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java-spring/">java spring</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -259,7 +267,28 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <h3 id="Start-with-Spring"><a href="#Start-with-Spring" class="headerlink" title="Start with Spring"></a>Start with Spring</h3><ul>
+<li><p>spring is an awesome Java framework which  can help Java programmer to save the size of code. Moreover, Spring also patched plenty of components like rabbitmq, hbase, etc. to improve coding efficiency.</p>
+</li>
+<li><p>I’ve get used to use gradle as a lib tool, therefore, I patch spring by add below code into build.gradle file.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">    compile(&quot;org.springframework.boot:spring-boot-starter-web:1.5.10.RELEASE&quot;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Afterward, we will need a main class to start our spring application. Make a directory under your java folder, then create a java file called SampleApplication( select a name you like) and put code below into it.</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">import org.springframework.boot.*;</div><div class="line">import org.springframework.boot.autoconfigure.*;</div><div class="line">import org.springframework.stereotype.*;</div><div class="line">import org.springframework.web.bind.annotation.*;</div><div class="line"></div><div class="line">@Controller</div><div class="line">@EnableAutoConfiguration</div><div class="line">public class SampleApplication &#123;</div><div class="line"></div><div class="line">    @RequestMapping(&quot;/&quot;)</div><div class="line">    @ResponseBody</div><div class="line">    String home() &#123;</div><div class="line">        return &quot;Hello World!&quot;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public static void main(String[] args) throws Exception &#123;</div><div class="line">        SpringApplication.run(SampleController.class, args);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>With annotation “@EnableAutoConfiguration” main class will import related configuration automatically. Afterward, “SpringApplication.run(SampleController.class, args);” in the main method can boot the spring application.</p>
+</li>
+<li><p>In this case, we have a controller as a demo of function. With annotation “@Controller” we defined this class as a controller to provide data or other resources. Annotation “@RequestMapping(“/“)” mapped a internet path to “localhost/“, combining with annotation “@ResponseBody” we can see what will be returned in method below(in this case is “Hello World!”).</p>
+</li>
+<li><p>with this two block of code we can establish service which can provide resources over the internet easily.</p>
+</li>
+</ul>
+<h1 id="why-spring"><a href="#why-spring" class="headerlink" title="why spring"></a>why spring</h1><ul>
+<li>the java which can be learned in school or university possibly used to solve algorithm or calculation problems. Therefore, students are still far away from the industrial usage, Nonetheless, spring is the bridge for students get into industrial programmers.</li>
+</ul>
+
       
       
         <div class="page-reward">
@@ -313,13 +342,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/05/23/My-Now-Post/">My Now Post</a></p>
+        <p><span>本文标题:</span><a href="/2017/05/26/my-first-blog/">Start with Spring</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 潼关山河翠 的个人博客">潼关山河翠</a></p>
-        <p><span>发布时间:</span>2017年05月23日 - 10时29分</p>
-        <p><span>最后更新:</span>2017年05月23日 - 10时29分</p>
+        <p><span>发布时间:</span>2017年05月26日 - 16时53分</p>
+        <p><span>最后更新:</span>2018年02月13日 - 11时16分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/05/23/My-Now-Post/" title="My Now Post">http://yoursite.com/2017/05/23/My-Now-Post/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/05/23/My-Now-Post/　　作者: 潼关山河翠" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/05/26/my-first-blog/" title="Start with Spring">http://yoursite.com/2017/05/26/my-first-blog/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/05/26/my-first-blog/　　作者: 潼关山河翠" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -332,18 +361,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2017/05/26/my-first-blog/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Start with Spring
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/05/23/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2017/05/23/My-Now-Post/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">My Now Post</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -354,7 +374,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Start-with-Spring"><span class="toc-number">1.</span> <span class="toc-text">Start with Spring</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#why-spring"><span class="toc-number"></span> <span class="toc-text">why spring</span></a>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -402,7 +422,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2017/05/23/My-Now-Post/" data-title="My Now Post" data-url="http://yoursite.com/2017/05/23/My-Now-Post/"></div>
+    <div class="ds-thread" data-thread-key="2017/05/26/my-first-blog/" data-title="Start with Spring" data-url="http://yoursite.com/2017/05/26/my-first-blog/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -425,13 +445,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/05/26/my-first-blog/" title="上一篇: Start with Spring">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2017/05/23/hello-world/" title="下一篇: Hello World">
+            <a href="/2017/05/23/My-Now-Post/" title="下一篇: My Now Post">
                 <i class="fa fa-angle-right"></i>
             </a>
         

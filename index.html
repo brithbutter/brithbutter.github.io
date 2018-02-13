@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>Brithbutter&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="Brithbutter&#39;s Blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Brithbutter&#39;s Blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Brithbutter&#39;s Blog">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Brithbutter&#39;s Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -46,7 +46,6 @@
           open_in_new: false
       }
   </script>
-
 </head>
 <body>
   <div id="container">
@@ -61,7 +60,7 @@
         </a>
 
         <hgroup>
-          <h1 class="header-author"><a href="/" title="Hi Mate">John Doe</a></h1>
+          <h1 class="header-author"><a href="/" title="Hi Mate">潼关山河翠</a></h1>
         </hgroup>
 
         
@@ -148,7 +147,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        
+                        <a href="/tags/java-spring/" style="font-size: 10px;">java spring</a>
                     </div>
                 </section>
                 
@@ -179,7 +178,7 @@
       <nav id="mobile-nav">
       <div class="overlay">
           <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">John Doe</a></h1>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">潼关山河翠</a></h1>
       </div>
     <div class="intrude-less">
         <header id="header" class="inner">
@@ -189,7 +188,7 @@
                 
             </a>
             <hgroup>
-              <h1 class="header-author"><a href="/" title="Me">John Doe</a></h1>
+              <h1 class="header-author"><a href="/" title="Me">潼关山河翠</a></h1>
             </hgroup>
             
             <nav class="header-menu">
@@ -229,6 +228,85 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-my-first-blog" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/26/my-first-blog/" class="article-date">
+      <time datetime="2017-05-26T08:53:58.000Z" itemprop="datePublished">2017-05-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/26/my-first-blog/">Start with Spring</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="Start-with-Spring"><a href="#Start-with-Spring" class="headerlink" title="Start with Spring"></a>Start with Spring</h3><ul>
+<li><p>spring is an awesome Java framework which  can help Java programmer to save the size of code. Moreover, Spring also patched plenty of components like rabbitmq, hbase, etc. to improve coding efficiency.</p>
+</li>
+<li><p>I’ve get used to use gradle as a lib tool, therefore, I patch spring by add below code into build.gradle file.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">    compile(&quot;org.springframework.boot:spring-boot-starter-web:1.5.10.RELEASE&quot;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Afterward, we will need a main class to start our spring application. Make a directory under your java folder, then create a java file called SampleApplication( select a name you like) and put code below into it.</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">import org.springframework.boot.*;</div><div class="line">import org.springframework.boot.autoconfigure.*;</div><div class="line">import org.springframework.stereotype.*;</div><div class="line">import org.springframework.web.bind.annotation.*;</div><div class="line"></div><div class="line">@Controller</div><div class="line">@EnableAutoConfiguration</div><div class="line">public class SampleApplication &#123;</div><div class="line"></div><div class="line">    @RequestMapping(&quot;/&quot;)</div><div class="line">    @ResponseBody</div><div class="line">    String home() &#123;</div><div class="line">        return &quot;Hello World!&quot;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public static void main(String[] args) throws Exception &#123;</div><div class="line">        SpringApplication.run(SampleController.class, args);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>With annotation “@EnableAutoConfiguration” main class will import related configuration automatically. Afterward, “SpringApplication.run(SampleController.class, args);” in the main method can boot the spring application.</p>
+</li>
+<li><p>In this case, we have a controller as a demo of function. With annotation “@Controller” we defined this class as a controller to provide data or other resources. Annotation “@RequestMapping(“/“)” mapped a internet path to “localhost/“, combining with annotation “@ResponseBody” we can see what will be returned in method below(in this case is “Hello World!”).</p>
+</li>
+<li><p>with this two block of code we can establish service which can provide resources over the internet easily.</p>
+</li>
+</ul>
+<h1 id="why-spring"><a href="#why-spring" class="headerlink" title="why spring"></a>why spring</h1><ul>
+<li>the java which can be learned in school or university possibly used to solve algorithm or calculation problems. Therefore, students are still far away from the industrial usage, Nonetheless, spring is the bridge for students get into industrial programmers.</li>
+</ul>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java-spring/">java spring</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-My-Now-Post" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -353,7 +431,7 @@
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; 2017 John Doe
+                &copy; 2018 潼关山河翠
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
